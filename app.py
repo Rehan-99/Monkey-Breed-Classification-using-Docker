@@ -10,7 +10,7 @@ import numpy as np
 import tensorflow as tf
 
 from tensorflow.keras.applications.resnet50 import preprocess_input
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 # Flask utils
