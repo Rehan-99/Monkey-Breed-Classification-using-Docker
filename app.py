@@ -8,8 +8,6 @@ import glob
 import re
 import numpy as np
 import tensorflow as tf
-from fastapi import FastAPI
-from pydantic import BaseModel
 
 from tensorflow.keras.applications.resnet50 import preprocess_input
 from tensorflow.keras.models import load_model
