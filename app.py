@@ -4,14 +4,11 @@ from __future__ import division, print_function
 # coding=utf-8
 import sys
 import os
-import glob
-import re
 import numpy as np
+from PIL import Image
 import tensorflow as tf
-
-from tensorflow.keras.applications.resnet50 import preprocess_input
 from keras.models import load_model
-from tensorflow.keras.preprocessing import image
+# from tensorflow.keras.applications.resnet50 import preprocess_input
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
@@ -30,10 +27,10 @@ model = load_model(MODEL_PATH)
 
 def model_predict(img_path, model):
     print(img_path)
-    img = image.load_img(img_path, target_size=(224, 224))
+    img = tf.keras.utils.load_img(img_path, target_size=(224, 224))
 
     # Preprocessing the image
-    x = image.img_to_array(img)
+    x = tf.keras.utils.img_to_array(img)
     # x = np.true_divide(x, 255)
     ## Scaling
     x=x/255
