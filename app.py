@@ -7,7 +7,8 @@ import os
 import numpy as np
 from PIL import Image
 import tensorflow as tf
-from keras.models import load_model
+# from keras.models import load_model
+from tensorflow import keras
 # from tensorflow.keras.applications.resnet50 import preprocess_input
 
 # Flask utils
@@ -22,7 +23,7 @@ app = Flask(__name__)
 # MODEL_PATH ='model.h5'
 
 # Load your trained model
-model = load_model('model.h5')
+model = keras.models.load_model('model.h5')
 
 
 def model_predict(img_path, model):
