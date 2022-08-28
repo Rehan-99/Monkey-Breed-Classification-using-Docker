@@ -19,10 +19,10 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-MODEL_PATH ='model.h5'
+# MODEL_PATH ='model.h5'
 
 # Load your trained model
-model = load_model(MODEL_PATH)
+model = load_model('model.h5')
 
 
 def model_predict(img_path, model):
