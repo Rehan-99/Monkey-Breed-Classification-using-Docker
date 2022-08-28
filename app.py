@@ -19,7 +19,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-MODEL_PATH ='./model.h5'
+MODEL_PATH ='model.h5'
 
 # Load your trained model
 model = load_model(MODEL_PATH)
@@ -81,7 +81,7 @@ def upload():
         # Save the file to ./uploads
         basepath = os.path.abspath(os.path.dirname(__file__))
         file_path = os.path.join(
-            basepath, './uploads', secure_filename(f.filename))
+            basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
 
         # Make prediction
